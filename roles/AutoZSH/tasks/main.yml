@@ -1,0 +1,27 @@
+---
+
+- name: Install ZSH
+  apt:
+      name:
+          - zsh
+
+- name: Clone OhMyZSH
+  git:
+      repo: "https://github.com/ohmyzsh/ohmyzsh.git"
+      dest: "{{ base }}/.oh-my-zsh"
+
+- name: Fix permissions
+  file:
+      path: "{{ base }}/.oh-my-zsh"
+      owner: "{{ user }}"
+      group: "{{ group }}"
+
+- name: Copy config into base directory
+  template:
+      src: "/tmp/configs/.zshrc"
+      dest: "{{ base }}/.zshrc"
+      owner: "{{ user }}"
+      group: "{{ group }}"
+
+- name: Change default shell
+  shell: chsh -s $(which zsh)
