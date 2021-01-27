@@ -12,8 +12,8 @@ Problems with the current status of this playbook:
 
 - Stupidily keeping vars inside each role instead of the outer playbook.
 - Neovim requires running **:PlugInstall** and **:PluginInstall** after running the playbook.
--  Uses my own configs repository and depends on it's structure.
--  0 safety checks.
+- Uses my own [configs](https://github.com/pCosta99/configs) repository and depends on it's structure.
+- 0 safety checks.
 
 Variables are stored for each role which is very stupid and is in top priorities to be changed.
 I'll keep a **TODO** list in this README in order to make progress more trackable.
