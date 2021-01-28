@@ -10,12 +10,6 @@
       repo: "https://github.com/ohmyzsh/ohmyzsh.git"
       dest: "{{ base }}/.oh-my-zsh"
 
-- name: Fix permissions
-  file:
-      path: "{{ base }}/.oh-my-zsh"
-      owner: "{{ user }}"
-      group: "{{ group }}"
-
 - name: Copy config into base directory
   template:
       src: "/tmp/configs/.zshrc"
@@ -25,3 +19,38 @@
 
 - name: Change default shell
   shell: chsh -s $(which zsh)
+
+- name: Clone zsh-syntax-highlighting
+  become: yes
+  git:
+      repo: "https://github.com/zsh-users/zsh-syntax-highlighting.git"
+      dest: "{{ base }}/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/"
+
+- name: Clone zsh-autosuggestions
+  git:
+      repo: "https://github.com/zsh-users/zsh-autosuggestions.git"
+      dest: "{{ base }}/.oh-my-zsh/custom/plugins/zsh-autosuggestions/"
+
+- name: Clone powerlevel9k
+  git:
+      repo: "https://github.com/bhilburn/powerlevel9k.git"
+      dest: "{{ base }}/.oh-my-zsh/custom/themes/powerlevel9k/"
+
+- name: Fix permissions
+  file:
+      path: "{{ base }}/.oh-my-zsh"
+      owner: "{{ user }}"
+      group: "{{ group }}"
+      recurse: yes
+
+- name: Clone fzf
+  git:
+      repo: "https://github.com/junegunn/fzf.git"
+      dest: "/tmp/fzf/"
+
+- name: Fix fzf permissions
+  file:
+      path: "/tmp/fzf/"
+      owner: "{{ user }}"
+      group: "{{ group }}"
+      recurse: yes

@@ -1,0 +1,9 @@
+---
+
+- name: Get Tilix package
+  apt:
+      name: tilix
+      state: present
+
+- name: Set it as default terminal
+  shell: update-alternatives --set x-terminal-emulator /usr/bin/tilix.wrapper
