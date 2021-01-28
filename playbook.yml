@@ -2,11 +2,22 @@
   hosts: localhost
   become: yes
   roles:
-          - AutoVim
+      - AutoVim
 
 - name: Setup ZSH and OhMyZSH
   hosts: localhost
   become: yes
   roles:
-          - AutoZSH
+      - AutoZSH
 
+- name: Setup Tilix
+  hosts: localhost
+  become: yes
+  roles:
+      - AutoTilix
+
+- name: Install fonts
+  hosts: localhost
+  become: yes
+  roles:
+      - Fonts

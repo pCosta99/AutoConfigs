@@ -1,0 +1,12 @@
+---
+
+- name: Clone nerd-fonts
+  repo: "https://github.com/ryanoasis/nerd-fonts.git"
+  dest: "/tmp/nerd-fonts"
+
+- name: Fix permissions
+  file:
+      dest: "/tmp/nerd-fonts"
+      owner: "{{ user }}"
+      group: "{{ group }}"
+      recurse: yes
