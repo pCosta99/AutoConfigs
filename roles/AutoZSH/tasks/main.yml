@@ -54,3 +54,16 @@
       owner: "{{ user }}"
       group: "{{ group }}"
       recurse: yes
+
+- name: Install ruby
+  apt:
+      pkg:
+      - ruby
+      - ruby-dev
+
+- name: Install ColorLS gem
+  community.general.gem:
+      name: colorls
+      state: latest
+
+
