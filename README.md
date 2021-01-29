@@ -6,7 +6,7 @@ This project will evolve along my need to use virtual machines or re-install my 
 
 ## Flexibility
 
-As of now, this is not very flexible. 
+As of now, this is not very flexible.
 
 Problems with the current status of this playbook:
 
@@ -20,7 +20,7 @@ I'll keep a **TODO** list in this README in order to make progress more trackabl
 Obviously, every problem above is part of the **TODO** list so I won't be repeating it there, but I will mark it as a done feature when it gets fixed.
 
 ## TODO List
-- Add a terminal role. I would like this to be termite but I struggle with getting it on stupid Ubuntu. (That's why I should always use **Manjaro** lmao). Will probably be going with **urxvt** in the mean time.
+- ~~Add a terminal role. I would like this to be termite but I struggle with getting it on stupid Ubuntu. (That's why I should always use **Manjaro** lmao). Will probably be going with **urxvt** in the mean time.~~ Added Tilix :heavy\_check\_mark: (termite might be added in the future).
 - Add a TWM role, most likely **i3** or, when I finally make the move, **xmonad** (**bspwm** also looks fairly neat).
 - Add a generic role that installs stuff I always end up installing too (Haskell, Python, Java, between so much other stuff).
 - Adjust to different operative systems.
@@ -29,4 +29,4 @@ Obviously, every problem above is part of the **TODO** list so I won't be repeat
 
 I'll also keep track of which systems it has been tested on, just to be know where it's safe to use. This list will barely grow as I only use Ubuntu for VM's and Arch for personal use.
 
-- Linux Mint 20.1 Cinnamon 
+- Linux Mint 20.1 Cinnamon
